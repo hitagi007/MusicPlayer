@@ -1,4 +1,4 @@
-package itto.pl.musicplayer;
+package itto.pl.music_visualizer;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("itto.pl.musicplayer", appContext.getPackageName());
+        assertEquals("itto.pl.music_visualizer.test", appContext.getPackageName());
     }
 }

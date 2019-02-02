@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/now_playing_bgr">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        style="@style/ToolBar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/tb_btn_action_back"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:layout_alignParentLeft="true"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_left_arrow" />
+
+        <TextView
+            android:id="@+id/tb_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/tb_btn_action_menu"
+            android:layout_toRightOf="@id/tb_btn_action_back"
+            android:gravity="center"
+            android:text="@string/now_playing"
+            android:textAlignment="center"
+            android:textColor="@color/tb_title_text_color"
+            android:textSize="@dimen/toolbar_title_text_size"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/tb_btn_action_menu"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_menu" />
+    </RelativeLayout>
+
+    <!--Cover Preview-->
+    <LinearLayout
+        android:id="@+id/preview_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/now_playing_preview_margin_top"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <!--To have a round image, need to call View.setClipToOutline(true) in code-->
+            <ImageView
+                android:id="@+id/now_playing_img_preview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/now_playing_fav_offset"
+                android:layout_marginTop="@dimen/now_playing_fav_offset"
+                android:layout_marginEnd="@dimen/now_playing_fav_offset"
+                android:background="@drawable/nowplaying_preview_bgr"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/test_preview"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/now_playing_btn_fav"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/now_playing_btn_fav" />
+
+            <ImageButton
+                android:id="@+id/now_playing_btn_fav"
+                android:layout_width="@dimen/now_playing_fav_button_size"
+                android:layout_height="@dimen/now_playing_fav_button_size"
+                android:background="@drawable/nowplaying_favorite_bgr"
+                android:padding="5dp"
+                android:src="@drawable/ic_not_favorite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!--Song Title-->
+    <RelativeLayout
+        android:id="@+id/song_title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/now_playing_song_info_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/preview_layout">
+
+        <TextView
+            android:id="@+id/now_playing_song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/now_laying_song_title_margin_end"
+            android:text="Demo Song title"
+            android:textColor="@color/now_playing_song_title_text_color"
+            android:textSize="@dimen/now_playing_song_title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/now_playing_btn_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/now_playing_song_title"
+            android:background="@drawable/now_playing_song_quality_bgr"
+            android:padding="2dp"
+            android:text="@string/high_quality"
+            android:textColor="@color/now_playing_song_quality_text_color"
+            android:textSize="@dimen/now_playing_song_quality_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!--Song Artist-->
+    <TextView
+        android:id="@+id/now_playing_tv_song_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo Song Artist"
+        android:textColor="@color/now_playing_song_artist_text_color"
+        android:textSize="@dimen/now_playing_song_artist_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_title_layout" />
+
+    <!--Visualizer-->
+    <itto.pl.music_visualizer.VerticalBarVisualizer
+        android:id="@+id/now_playing_visualizer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/media_control_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/now_playing_tv_song_artist" />
+    <!--Media Control-->
+    <LinearLayout
+        android:id="@+id/media_control_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/now_playing_media_control_margin_bottom"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginBottom="@dimen/now_playing_media_control_margin_bottom">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <!--Shuffle-->
+        <ImageButton
+            android:id="@+id/now_playing_btn_shuffle"
+            android:layout_width="@dimen/now_playing_media_control_size_small"
+            android:layout_height="@dimen/now_playing_media_control_size_small"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_shuffle_on" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <!--Previous-->
+        <ImageButton
+            android:id="@+id/now_playing_btn_prev"
+            android:layout_width="@dimen/now_playing_media_control_size_small"
+            android:layout_height="@dimen/now_playing_media_control_size_small"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_previous_on" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <!--Play-->
+        <ImageButton
+            android:id="@+id/now_playing_btn_play"
+            android:layout_width="@dimen/now_playing_media_control_size_big"
+            android:layout_height="@dimen/now_playing_media_control_size_big"
+            android:background="@drawable/now_playing_control_bgr"
+            android:src="@drawable/ic_play_filled" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!--Next-->
+        <ImageButton
+            android:id="@+id/now_playing_btn_next"
+            android:layout_width="@dimen/now_playing_media_control_size_small"
+            android:layout_height="@dimen/now_playing_media_control_size_small"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_next_on" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <!--Loop-->
+        <ImageButton
+            android:id="@+id/now_playing_btn_loop"
+            android:layout_width="@dimen/now_playing_media_control_size_small"
+            android:layout_height="@dimen/now_playing_media_control_size_small"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_loop_on" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

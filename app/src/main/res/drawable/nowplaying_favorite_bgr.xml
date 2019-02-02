@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/now_playing_fav_btn_bgr" />
+    <stroke
+        android:width="@dimen/now_playing_fav_button_stroke_weight"
+        android:color="@color/now_playing_fav_btn_stroke" />
+</shape>

@@ -1,3 +1,7 @@
 <resources>
+    <!--Default-->
+    <string name="high_quality">HQ</string>
     <string name="app_name">Music Player</string>
+    <!--NowPlaying-->
+    <string name="now_playing">Now Playing</string>
 </resources>
