@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mini_play_size"
+    android:background="@color/colorPrimaryDark"
+    android:padding="@dimen/mini_play_padding">
+
+    <!--Need to call ClipToOutline method in code -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mini_play_img_preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/nowplaying_preview_bgr"
+        android:scaleType="centerCrop"
+        android:src="@drawable/test_preview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Progress-->
+    <LinearLayout
+        android:id="@+id/mini_play_progress_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/mini_play_progress_layout_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mini_play_img_preview">
+
+        <TextView
+            android:id="@+id/mini_play_tv_elapse_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/mini_play_time_text_color"
+            android:textSize="@dimen/mini_play_time_text_size" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/mini_play_seek_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/mini_play_tv_remain_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/mini_play_time_text_color"
+            android:textSize="@dimen/mini_play_time_text_size" />
+    </LinearLayout>
+
+    <!--Media Control-->
+    <RelativeLayout
+        android:id="@+id/mini_play_control_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/mini_play_progress_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mini_play_song_title_layout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/mini_play_btn_prev"
+            android:layout_width="@dimen/mini_play_control_size"
+            android:layout_height="@dimen/mini_play_control_size"
+            android:layout_marginEnd="@dimen/mini_play_control_margin"
+            android:background="@drawable/media_control_circle_bgr"
+            android:padding="@dimen/mini_play_control_padding"
+            android:src="@drawable/ic_previous_on" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/mini_play_btn_playback"
+            android:layout_width="@dimen/mini_play_control_size"
+            android:layout_height="@dimen/mini_play_control_size"
+            android:layout_marginEnd="@dimen/mini_play_control_margin"
+            android:layout_toEndOf="@id/mini_play_btn_prev"
+            android:background="@drawable/media_control_circle_bgr"
+            android:padding="@dimen/mini_play_control_padding"
+            android:src="@drawable/ic_play_filled" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/mini_play_btn_next"
+            style="@style/mini_media_control_button"
+            android:layout_width="@dimen/mini_play_control_size"
+            android:layout_height="@dimen/mini_play_control_size"
+            android:layout_toEndOf="@id/mini_play_btn_playback"
+            android:src="@drawable/ic_next_on" />
+
+
+    </RelativeLayout>
+
+    <!--Song Title-->
+    <RelativeLayout
+        android:id="@+id/mini_play_song_title_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mini_play_song_title_margin"
+        app:layout_constraintEnd_toStartOf="@id/mini_play_control_layout"
+        app:layout_constraintStart_toEndOf="@id/mini_play_img_preview"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/now_playing_btn_quality"
+            style="@style/high_quality_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/mini_play_hq_text_color"
+            android:textSize="@dimen/mini_play_song_hq_text_size" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mini_play_song_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/mini_play_song_title_item_margin"
+            android:layout_toLeftOf="@id/now_playing_btn_quality"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Demo Song title.....asdasdshit"
+            android:textColor="@color/mini_play_song_title_color"
+            android:textSize="@dimen/mini_play_song_title_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!--Song Artist-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mini_play_song_artist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mini_play_song_title_margin"
+        android:text="PL_itto"
+        android:textColor="@color/mini_play_song_artist_color"
+        android:textSize="@dimen/mini_play_song_artist_text_size"
+        app:layout_constraintBottom_toTopOf="@id/mini_play_progress_layout"
+        app:layout_constraintEnd_toStartOf="@id/mini_play_control_layout"
+        app:layout_constraintStart_toEndOf="@id/mini_play_img_preview"
+        app:layout_constraintTop_toBottomOf="@id/mini_play_song_title_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

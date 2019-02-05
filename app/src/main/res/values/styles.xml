@@ -14,4 +14,17 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:padding">@dimen/toolbar_padding</item>
     </style>
+
+    <style name="high_quality_text_style">
+        <item name="android:background">@drawable/now_playing_song_quality_bgr</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">@string/high_quality</item>
+    </style>
+
+    <style name="mini_media_control_button">
+        <item name="android:layout_marginEnd">@dimen/mini_play_control_margin</item>
+        <item name="android:background">@drawable/media_control_circle_bgr</item>
+        <item name="android:padding">@dimen/mini_play_control_padding</item>
+    </style>
 </resources>

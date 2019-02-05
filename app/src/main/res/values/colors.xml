@@ -5,6 +5,9 @@
     <color name="colorPrimaryDark">#24262B</color>
     <color name="colorAccent">#FD4A6C</color>
     <color name="white">#ffffff</color>
+    <color name="light_grey">#666666</color>
+    <color name="media_control_bgr">@color/colorPrimary</color>
+
     <!--Toolbar-->
     <color name="tb_title_text_color">#ffffff</color>
 
@@ -17,5 +20,11 @@
     <color name="now_playing_song_quality_text_color">@color/white</color>
 
     <color name="now_playing_song_title_text_color">@color/white</color>
-    <color name="now_playing_song_artist_text_color">#666666</color>
+    <color name="now_playing_song_artist_text_color">@color/light_grey</color>
+
+    <!--Mini Player-->
+    <color name="mini_play_time_text_color">@color/white</color>
+    <color name="mini_play_song_title_color">@color/white</color>
+    <color name="mini_play_song_artist_color">@color/light_grey</color>
+    <color name="mini_play_hq_text_color">@color/white</color>
 </resources>

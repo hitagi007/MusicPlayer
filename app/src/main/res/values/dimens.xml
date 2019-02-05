@@ -25,4 +25,23 @@
     <dimen name="now_playing_media_control_margin_bottom">40dp</dimen>
     <dimen name="now_playing_media_control_size_small">20dp</dimen>
     <dimen name="now_playing_media_control_size_big">60dp</dimen>
+
+    <!--Mini Player-->
+    <dimen name="mini_play_padding">5dp</dimen>
+    <dimen name="mini_play_size">90dp</dimen>
+
+    <dimen name="mini_play_time_text_size">10dp</dimen>
+
+    <dimen name="mini_play_progress_layout_padding">2dp</dimen>
+
+    <dimen name="mini_play_control_margin">5dp</dimen>
+    <dimen name="mini_play_control_size">35dp</dimen>
+    <dimen name="mini_play_control_padding">2dp</dimen>
+
+    <dimen name="mini_play_song_title_text_size">14dp</dimen>
+    <dimen name="mini_play_song_hq_text_size">10dp</dimen>
+    <dimen name="mini_play_song_artist_text_size">13dp</dimen>
+    <dimen name="mini_play_song_title_margin">5dp</dimen>
+    <dimen name="mini_play_song_title_item_margin">3dp</dimen>
+
 </resources>

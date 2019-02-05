@@ -23,13 +23,14 @@ ext {
     testRunnerVer = "1.1.0-alpha4"
     espressoVer = "3.1.0-alpha4"
     gsonVer = "2.8.5"
+    constraintLayoutVer = "2.0.0-alpha3"
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$project.appCompatVer"
     implementation "androidx.media:media:$project.androiXMediaVer"
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation "androidx.constraintlayout:constraintlayout:$project.constraintLayoutVer"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation "androidx.test:runner:$project.testRunnerVer"
     androidTestImplementation "androidx.test.espresso:espresso-core:$project.espressoVer"

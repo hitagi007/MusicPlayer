@@ -28,7 +28,7 @@
             android:id="@+id/tb_tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toLeftOf="@id/tb_btn_action_menu"
+            android:layout_toLeftOf="@+id/tb_btn_action_menu"
             android:layout_toRightOf="@id/tb_btn_action_back"
             android:gravity="center"
             android:text="@string/now_playing"
@@ -56,7 +56,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <Space
             android:layout_width="0dp"
@@ -126,16 +126,13 @@
 
         <TextView
             android:id="@+id/now_playing_btn_quality"
+            style="@style/high_quality_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/now_playing_song_title"
-            android:background="@drawable/now_playing_song_quality_bgr"
-            android:padding="2dp"
-            android:text="@string/high_quality"
             android:textColor="@color/now_playing_song_quality_text_color"
-            android:textSize="@dimen/now_playing_song_quality_text_size"
-            android:textStyle="bold" />
+            android:textSize="@dimen/now_playing_song_quality_text_size" />
     </RelativeLayout>
 
     <!--Song Artist-->
@@ -161,6 +158,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/now_playing_tv_song_artist" />
+    <!--Seekbar-->
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/now_playing_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"
+        app:layout_constraintBottom_toTopOf="@+id/media_control_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/now_playing_visualizer" />
     <!--Media Control-->
     <LinearLayout
         android:id="@+id/media_control_layout"
@@ -179,11 +186,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <!--Shuffle-->
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/now_playing_btn_shuffle"
             android:layout_width="@dimen/now_playing_media_control_size_small"
             android:layout_height="@dimen/now_playing_media_control_size_small"
-            android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_shuffle_on" />
 
         <Space
@@ -191,11 +197,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <!--Previous-->
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/now_playing_btn_prev"
             android:layout_width="@dimen/now_playing_media_control_size_small"
             android:layout_height="@dimen/now_playing_media_control_size_small"
-            android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_previous_on" />
 
         <Space
@@ -203,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <!--Play-->
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/now_playing_btn_play"
             android:layout_width="@dimen/now_playing_media_control_size_big"
             android:layout_height="@dimen/now_playing_media_control_size_big"
@@ -216,11 +221,10 @@
             android:layout_weight="1" />
 
         <!--Next-->
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/now_playing_btn_next"
             android:layout_width="@dimen/now_playing_media_control_size_small"
             android:layout_height="@dimen/now_playing_media_control_size_small"
-            android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_next_on" />
 
         <Space
@@ -228,11 +232,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <!--Loop-->
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/now_playing_btn_loop"
             android:layout_width="@dimen/now_playing_media_control_size_small"
             android:layout_height="@dimen/now_playing_media_control_size_small"
-            android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_loop_on" />
 
         <Space
